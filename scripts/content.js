@@ -1,20 +1,26 @@
 console.log("content script is running.");
 
-function setup(){
-    // console.log("this is setup");
-    let c=createCanvas(windowWidth, windowHeight);
-    c.position(0,0);
-    c.style('pointer-events','none');
-    clear();
-}
+var s = p => {
+   p.setup=function(){
+        // console.log("this is setup");
+        let h=document.body.clientHeight;
+        let c=p.createCanvas(p.windowWidth, h);
+        c.position(0,0);
+        c.style('pointer-events','none');
+        p.clear();
+    }
+    
+    p.draw=function(){
+        // console.log("this is loop fun");
+        p.stroke(0);
+        p.strokeWeight(4);
+        // background(0);
+        // if(isMousePressed){
+            p.line(p.mouseX, p.mouseY, p.pmouseX, p.pmouseY);
+        // }
+    }
 
-function draw(){
-    // console.log("this is loop fun");
-    stroke(0);
-    strokeWeight(4);
-    // background(0);
-    // if(isMousePressed){
-        line(mouseX, mouseY, pmouseX, pmouseY);
-    // }
+  };
+  
+  new p5(s); // invoke p5
 
-}
