@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "WebDoodle Chrome Extension",
+    "description": "Doodle directly on webpages. The internet is your canvas now!",
+    "version": "0.1",
+    "content_scripts": [
+      {
+        "js": [
+          "scripts/p5.js","scripts/content.js"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ]
+  }
