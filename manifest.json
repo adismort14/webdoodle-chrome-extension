@@ -3,6 +3,12 @@
     "name": "WebDoodle Chrome Extension",
     "description": "Doodle directly on webpages. The internet is your canvas now!",
     "version": "0.1",
+    "author":"Aditya Sankhla",
+    "action": {
+      "default_title": "Doodler",  
+      "default_popup": "popup.html"    
+    },
+    "permissions":["activeTab"],
     "content_scripts": [
       {
         "js": [
